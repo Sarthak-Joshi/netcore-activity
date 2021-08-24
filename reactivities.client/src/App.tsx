@@ -24,11 +24,11 @@ function App() {
           {activities.map((activity: any) => (
             <li key={activity.id}>
               <label> Title : {activity.title}</label>
-              <label> Date : {activity.date}</label>
-              <label> Description : {activity.description}</label>
-              <label> Category : {activity.category}</label>
-              <label> City : {activity.city}</label>
-              <label> Venue : {activity.venue}</label>
+                {/* <label> Date : {activity.date}</label>
+                <label> Description : {activity.description}</label>
+                <label> Category : {activity.category}</label>
+                <label> City : {activity.city}</label>
+                <label> Venue : {activity.venue}</label> */}
             </li>
           ))}
         </ul>
