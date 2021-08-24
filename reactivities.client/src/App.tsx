@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 import axios from "axios";
+import { Header, Icon, List } from "semantic-ui-react";
 
 // Todo : Read Axios and Promise MDN
 
@@ -15,24 +16,25 @@ function App() {
     // return () => {
     //   cleanup;
     // };
-  }, []);
+  }, []); // * Empty array for avoiding infinite state loop
   return (
     <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <ul>
-          {activities.map((activity: any) => (
-            <li key={activity.id}>
-              <label> Title : {activity.title}</label>
-                {/* <label> Date : {activity.date}</label>
+      <Header as='h2' icon textAlign='center'>
+        <Icon name='users' circular />
+        <Header.Content>Reactivities</Header.Content>
+      </Header>
+      <List bulleted>
+        {activities.map((activity: any) => (
+          <List.Item key={activity.id}>
+            {activity.title}
+            {/* <label> Date : {activity.date}</label>
                 <label> Description : {activity.description}</label>
                 <label> Category : {activity.category}</label>
                 <label> City : {activity.city}</label>
                 <label> Venue : {activity.venue}</label> */}
-            </li>
-          ))}
-        </ul>
-      </header>
+          </List.Item>
+        ))}
+      </List>
     </div>
   );
 }
